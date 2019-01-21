@@ -1,4 +1,6 @@
 # SqlBaseProvider
+建议点开查看，否则无法获取详细内容
+
 对于springboot-mybatis单表操作的封装
 包含单表的
   -增添
