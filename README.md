@@ -17,7 +17,7 @@
   -BaseMapperInterceptor.java
   -BaseSqlProvider.java
   -Table.java
-四个文件放入conmmon下，修改部分信息来适配自己的项目
+四个文件放入common下，修改部分信息来适配自己的项目
 
 （二）
 对于某个XXXmapper.xml文件
