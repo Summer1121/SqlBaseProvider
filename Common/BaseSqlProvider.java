@@ -54,9 +54,22 @@ public class BaseSqlProvider {
 	
 	// 初始化
 	private void init() {
-		ResultMap resultMap = mappedStmt.getConfiguration().getResultMap("BaseResultMap");
-		idResult = resultMap.getIdResultMappings().get(0);
-		parse(resultMap);
+		//当存在多个mapper也就存在多个basesqlmapper，会“模棱两可”问题，
+		//需要指定BaseResultMap的完整路径
+		String id = mappedStmt.getId();
+		if(id!=null)
+		{
+			int index=id.lastIndexOf(".");
+			if(index!=-1)
+			{
+				String prefix=id.substring(0, index);
+				String resultMapId=prefix+".BaseResultMap";
+				ResultMap resultMap = mappedStmt.getConfiguration().getResultMap(resultMapId);
+				//主键
+				idResult = resultMap.getIdResultMappings().get(0);
+				parse(resultMap);
+			}
+		}
 	}
 
 	// 解析resultMap
