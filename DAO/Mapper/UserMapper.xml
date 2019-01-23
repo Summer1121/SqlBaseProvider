@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ncepu.feilong505.OASystem.Dao.UserMapper">
+	<resultMap id="BaseResultMap" type="com.ncepu.feilong505.OASystem.Model.User">
+		<id column="user_id" property="userId"/>
+		<result column="password" property="password"/>
+		<result column="name" property="name"/>
+		<result column="position" property="position"/>
+		<result column="work_station_id" property="workStationId"/>
+		<result column="phone" property="phone"/>
+		<result column="email" property="email"/>
+		<result column="role" property="role"/>
+		<result column="icon" property="icon"/>
+	</resultMap>
+</mapper>
